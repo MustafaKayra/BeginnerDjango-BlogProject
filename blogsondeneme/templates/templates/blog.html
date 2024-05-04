@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{blog.title}}{% endblock title %}
+
+{% block body %}
+    
+    <div class="card mb-3">
+        <img class="img-fluid" src="{{ blog.image.url }}" alt="card image">
+        <hr>
+        <div class="card-body">
+            <h5 class="card-title">{{blog.title}}</h5>
+            <p class="card-text">{{blog.content}}</p>
+            <p class="card-text"><small class="text-muted">{{blog.author}}</small></p>
+        </div>
+        <style>
+            .img-fluid {
+                width: 1110px;
+                height: 300px;
+            }
+        </style>
+    </div>
+    
+
+{% endblock body %}
