@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block body %}
+    {% if request.user.is_authenticated %}
+        <div class="jumbotron text-center">
+            <h1>Welcome! {{request.user}}</h1>
+            <p>Developed By <a href="https://github.com/MustafaKayra" target="_blank">MustafaKayra</a></p>
+            <p>You can click <a href="https://github.com/MustafaKayra/BeginnerDjango-BlogProject" target="_blank">here</a> to access the project's codes.</p>
+            <br>
+        </div>
+    {% else %}
+        <div class="jumbotron text-center">
+            <h1>Welcome</h1>
+            <p>you can continue by logging in</p>
+            <a href="{% url 'login' %}"><button class="btn btn-primary">Login</button></a>
+        </div>
+    {% endif %}
+    
+    <div class="col-3">
+        <div class="row">
+            <img src="{% static 'img/2023-BMW-M1000RR-18-scaled.webp' %}" alt="" width="500">
+            <p>I put this picture because I couldn't find anything to add to the home page.</p>
+        </div>
+    </div>
+
+{% endblock body %}
+
